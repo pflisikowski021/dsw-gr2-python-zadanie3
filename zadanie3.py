@@ -111,7 +111,9 @@ def pozyskajKurs(waluta, data):
             if odpowiedz.status_code == 200:
                 print(f"Najbliższy dzień roboczy dla którego udało się znaleźć kurs: {data}")
                 return odpowiedz.json()['rates'][0]['mid']
-        print("Nie udało się znaleźć kursu waluty z danego dnia ani najbliższych poprzednich dni")     
+        print("Nie udało się znaleźć kursu waluty z danego dnia ani najbliższych poprzednich dni")
+        input("Wciśnij Enter aby opuścić program")
+        sys.exit()
     else:
         return odpowiedz.json()['rates'][0]['mid']
 
